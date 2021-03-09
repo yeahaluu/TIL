@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}ping{% endblock title %}
+
+{% block content %}
+<h1>ping</h1>
+{% comment %} 
+  action => 수신인(목적지)
+  method => 공개/ 비공개 여부
+    - GET: 모든 데이터가 (URL에) 공개 되어 전송
+    - POST: 데이터가 URL에 공개되지 않음
+{% endcomment %}
+<form action="{% url 'pong' %}" method="GET">
+  <label for="kor-name">한글 이름</label>
+  <input type="text" name="kor-name" id="kor-name">
+
+  <label for="eng-name">English name</label>
+  <input type="text" name="eng-name" id="eng-name">
+
+  <input type="submit" value="전송">
+</form>
+{% endblock content %}
+

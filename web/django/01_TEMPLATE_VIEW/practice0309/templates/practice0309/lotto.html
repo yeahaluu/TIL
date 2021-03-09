@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  practice0309
+{% endblock title %}
+
+{% block content %}
+  <h1>로또 당첨 횟수를 알아보자.</h1>
+  <hr>
+  <h2>{{ round }}회차 당첨 번호: {{ lotto_num }}+{{ bonus_num }}</h2>
+  <ul>
+    {% for k, v in result.items %}
+      <li>{{ k }}:{{ v }}번</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
