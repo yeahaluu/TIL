@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}New page{% endblock title %}
+
+{% block body %}
+  <form action="{% url 'create' %}" method="">
+    <div>
+      name: <input type="text" name="name"> 
+      {% comment %} 원래 라벨 해야함 {% endcomment %}
+    </div>
+    <div>
+      age: <input type="text" name="age">
+    </div>
+    <div>
+      major: <input type="text" name="major">
+    </div>
+    intro: <textarea name="intro" cols="30" rows="5"></textarea>
+  
+    <div>
+      <input type="submit" value="제출">
+    </div>
+  </form>
+{% endblock body %}
