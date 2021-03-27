@@ -2,10 +2,10 @@
 {% block title %}New page{% endblock title %}
 
 {% block body %}
-  <form action="{% url 'create' %}" method="">
+  <form action="{% url 'create' %}" method="POST">
+  {% csrf_token %}
     <div>
       name: <input type="text" name="name"> 
-      {% comment %} 원래 라벨 해야함 {% endcomment %}
     </div>
     <div>
       age: <input type="text" name="age">
@@ -16,7 +16,7 @@
     intro: <textarea name="intro" cols="30" rows="5"></textarea>
   
     <div>
-      <input type="submit" value="제출">
+      <input type="submit" class="btn btn-primary">
     </div>
   </form>
 {% endblock body %}
