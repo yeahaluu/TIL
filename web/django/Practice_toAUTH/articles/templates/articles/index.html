@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>INDEX</h1>
+{% for article in articles %}
+  <li>
+    <a href="{% url 'articles:detail' article.pk%}">
+      {{ article.title }}
+    </a>
+  </li>
+{% endfor %}
+<div>
+  <a href="{% url 'articles:create' %}">CREATE ARTICLE</a>
+</div>
+<div>
+  <a href="{% url 'accounts:signup' %}">Signup</a>
+  <a href="{% url 'accounts:login' %}">login</a>
+  <a href="{% url 'accounts:logout' %}">logout</a>
+  <a href="{% url 'accounts:profile' %}">profile</a>
+</div>
+{% endblock content %}
+

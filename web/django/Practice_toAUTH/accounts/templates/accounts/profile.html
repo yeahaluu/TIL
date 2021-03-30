@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>PROFILE PAGE</h1>
+<p>
+  {{ me.username }}
+  {% comment %} {{ user.username }}
+  {{ request.user.username }} {% endcomment %}
+</p>
+<p>
+  <a href="{% url 'accounts:change_password' %}">change password</a>
+</p>
+<p>
+  <form action="{% url 'accounts:withdraw' %}" method="POST">
+    {% csrf_token %}
+    <button class="btn btn-light" onclick="return confirm('진짜 탈퇴할거야?')">withdraw</button>
+  </form>
+</p>
+{% endblock content %}
